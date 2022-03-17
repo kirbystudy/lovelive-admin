@@ -1,12 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-import {getIndex} from "../api";
+import { sayHello } from "../api/hello";
 
 const count = ref(0)
 const message = ref("lovelive音乐后台")
 
 const hi = ()=> {
-  getIndex().then((res) => {
+  sayHello().then((res) => {
     message.value = res.data
   })
   message.value = "已请求"

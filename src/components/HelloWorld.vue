@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { sayHello } from "../api/hello";
 
 const count = ref(0)
-const message = ref("lovelive音乐后台")
+const message = ref("LoveLive音乐后台管理")
 
 const hi = ()=> {
   sayHello().then((res) => {

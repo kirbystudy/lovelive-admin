@@ -7,5 +7,5 @@
   "policyType": "cpu",
   "policyThreshold": 60,
   "envParams": {},
-  "customLogs": "stdout",
+  "customLogs": "stdout"
 }

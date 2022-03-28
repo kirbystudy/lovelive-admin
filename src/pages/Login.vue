@@ -47,13 +47,14 @@ export default {
     const password = ref('')
 
     const store = useStore()
-    const router = useRouter()
     const route = useRoute()
+    const router = useRouter()
 
     const onSubmit = (username, password) => {
       store.dispatch('user/login', { username, password }).then(() => {
-        // 如果query有redirect的情况下，就会跳转到参数的页面，如果没有就跳转到首页
-        router.push({ path: route.query.redirect || '/' })
+        store.dispatch('user/fetchCurrentUser').then(() => {
+          router.push({ path: route.query.redirect || '/' })
+        })
       })
     }
     return {

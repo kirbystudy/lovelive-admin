@@ -1,5 +1,11 @@
-import { get, post } from './request'
+import { get } from './request'
 
-export const login = (username, password) => {
-  return post('/login', { username, password })
+// 分页查询
+export const search = page => {
+  return get('/users', { params: page })
+}
+
+// 获取当前用户信息
+export const getCurrentUser = () => {
+  return get('users/myLoginState')
 }

@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 // 假设你的根组件是 App.vue
 // 并放置在与 main.js 相同的文件夹中
 import App from './App.vue'
-import { Quasar } from 'quasar'
+import { Quasar, Notify } from 'quasar'
 import router from './router'
 import store from './store'
 import './permission.js'
@@ -19,7 +19,9 @@ myApp.use(router)
 myApp.use(store)
 
 myApp.use(Quasar, {
-  plugins: {} // 导入 Quasar 插件并在此处添加
+  plugins: {
+    Notify
+  } // 导入 Quasar 插件并在此处添加
 })
 
 myApp.mount('#app') // 假设您的 index.html 中有一个 <div id="app"></div>

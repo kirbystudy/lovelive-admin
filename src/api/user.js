@@ -1,11 +1,16 @@
-import { get } from './request'
+import { get, post } from './request'
 
-// 分页查询
+// 用户检索
 export const search = page => {
   return get('/users', { params: page })
 }
 
 // 获取当前用户信息
-export const getCurrentUser = () => {
-  return get('users/myLoginState')
+export const getUser = () => {
+  return get('/users/myLoginState')
+}
+
+// 用户注册
+export const create = user => {
+  return post('/users', user)
 }

@@ -5,7 +5,7 @@ import App from './App.vue'
 import { Quasar, Notify } from 'quasar'
 import router from './router'
 import store from './store'
-import './permission.js'
+import './permission'
 
 // 导入图标库
 import '@quasar/extras/material-icons/material-icons.css'
@@ -17,6 +17,10 @@ const myApp = createApp(App)
 
 myApp.use(router)
 myApp.use(store)
+
+if (process.env.NODE_ENV === 'development') {
+  myApp.config.devtools = true
+}
 
 myApp.use(Quasar, {
   plugins: {

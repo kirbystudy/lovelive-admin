@@ -1,17 +1,17 @@
 import {
   getToken,
   removeToken,
-  getCurrentUser as getUser,
+  getCurrentUser,
   setCurrentUser,
   setToken,
   removeCurrentUser
 } from '../../utils/auth.js'
 import { createToken } from '../../api/token.js'
-import { getCurrentUser } from '../../api/user.js'
+import { getUser } from '../../api/user.js'
 
 const state = () => ({
   token: getToken(),
-  currentUser: getUser()
+  currentUser: getCurrentUser()
 })
 
 const getters = {
@@ -37,7 +37,6 @@ const actions = {
     })
   },
 
-  // 用户注销
   logout({ commit }) {
     commit('SET_TOKEN', '')
     commit('SET_CURRENT_USER', '')
@@ -47,7 +46,7 @@ const actions = {
 
   fetchCurrentUser({ commit }) {
     return new Promise((resolve, reject) => {
-      getCurrentUser()
+      getUser()
         .then(currentUser => {
           commit('SET_CURRENT_USER', currentUser)
           setCurrentUser(currentUser)

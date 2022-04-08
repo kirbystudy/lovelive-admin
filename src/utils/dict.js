@@ -11,3 +11,17 @@ export const musicStatusColor = {
   PUBLISHED: 'green',
   DRAFT: 'grey-9'
 }
+
+// 歌手状态
+export const artistStatus = {
+  BLOCKED: '已封禁',
+  PUBLISHED: '上架',
+  DRAFT: '草稿'
+}
+
+// 歌手状态颜色
+export const artistStatusColor = {
+  BLOCKED: 'red',
+  PUBLISHED: 'green',
+  DRAFT: 'grey-9'
+}

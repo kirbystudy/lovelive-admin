@@ -1,8 +1,8 @@
 import { get, post, put } from './request.js'
 
 // 查询所有歌曲
-export const list = () => {
-  return get('/musics')
+export const search = searchFilter => {
+  return post('/musics/search', searchFilter)
 }
 
 // 新增歌曲
